@@ -4,6 +4,7 @@
 class DiscordPresence : public IAIMPPlugin , public ComObject
 {
     public:
+		DiscordPresence() = default;
         /**
          * IAIMPPlugin implementation.
          *
@@ -21,7 +22,7 @@ class DiscordPresence : public IAIMPPlugin , public ComObject
          *
          * @return S_OK on success.
          */
-        HRESULT WINAPI InfoGet(int Index, IAIMPString** Value);
+        TChar* WINAPI InfoGet(int Index);
 
         /**
          * IAIMPPlugin implementation.
@@ -35,7 +36,7 @@ class DiscordPresence : public IAIMPPlugin , public ComObject
          *         AIMP_PLUGIN_CATEGORY_VISUALS
          *         AIMP_PLUGIN_CATEGORY_DSP
          */
-        DWORD WINAPI InfoGetCategories();
+        LongWord WINAPI InfoGetCategories() override;
 
         /**
          * IAIMPPlugin implementation.
@@ -47,7 +48,7 @@ class DiscordPresence : public IAIMPPlugin , public ComObject
          *
          * @return S_OK if initialization was successful.
          */
-        HRESULT WINAPI Initialize(IAIMPCore* Core);
+        HRESULT WINAPI Initialize(IAIMPCore* Core) override;
 
         /**
          * IAIMPPlugin implementation.
@@ -57,7 +58,7 @@ class DiscordPresence : public IAIMPPlugin , public ComObject
          *
          * @return Operation status.
          */
-        HRESULT WINAPI Finalize();
+        HRESULT WINAPI Finalize() override;
 
         /**
          * IAIMPPlugin implementation.
@@ -67,5 +68,5 @@ class DiscordPresence : public IAIMPPlugin , public ComObject
          * @param NotifyID   Notification identifier.
          * @param Data       Optional notification data.
          */
-        void WINAPI SystemNotification(int NotifyID, IUnknown* Data);
+        void WINAPI SystemNotification(int NotifyID, IUnknown* Data) override;
  };

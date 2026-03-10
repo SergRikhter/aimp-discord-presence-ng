@@ -1,12 +1,12 @@
 #include "pch.h" 
 #include "DiscordPresence.h"
 
-HRESULT WINAPI DiscordPresence::InfoGet(int Index, IAIMPString** Value) {
-    return E_NOTIMPL; 
+TChar* WINAPI DiscordPresence::InfoGet(int Index) {
+    return 0; 
 }
 
 
-DWORD WINAPI DiscordPresence::InfoGetCategories() {
+LongWord WINAPI DiscordPresence::InfoGetCategories() {
     return 0;
 }
 
