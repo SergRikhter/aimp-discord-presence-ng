@@ -44,10 +44,10 @@
     <ClCompile Include="src\helpers\ComObject.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\plugin\export.cpp">
+    <ClCompile Include="src\plugin\DiscordPresence.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\plugin\DiscordPresence.cpp">
+    <ClCompile Include="src\plugin\export.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
