@@ -6,8 +6,6 @@ class DiscordPresence :
      public ComObject,
      public IAIMPPlugin
 {
-    private:
-        ULONG FRefCount = 1;
     public:
         /**
          * IAIMPPlugin implementation.
