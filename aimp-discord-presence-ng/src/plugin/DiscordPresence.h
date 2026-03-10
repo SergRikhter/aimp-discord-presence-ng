@@ -1,10 +1,8 @@
 #pragma once
 #include "apiPlugin.h"
 
-class DiscordPresence
+class DiscordPresence : public IAIMPPlugin
 {
-    class Plugin : public IAIMPPlugin
-    {
     private:
         ULONG FRefCount = 1;
 
@@ -104,5 +102,4 @@ class DiscordPresence
          * @param Data       Optional notification data.
          */
         void WINAPI SystemNotification(int NotifyID, IUnknown* Data);
-    };
 };
