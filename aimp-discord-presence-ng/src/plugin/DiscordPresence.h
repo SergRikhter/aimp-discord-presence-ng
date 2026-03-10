@@ -1,10 +1,7 @@
-#pragma once
 #include "apiPlugin.h"
 #include "ComObject.h"
 
-class DiscordPresence :
-     public ComObject,
-     public IAIMPPlugin
+class DiscordPresence : public IAIMPPlugin , public ComObject
 {
     public:
         /**
