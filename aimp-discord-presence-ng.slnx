@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="aimp-discord-presence-ng/aimp-discord-presence-ng.vcxproj" Id="58731839-5459-4bf4-a474-9620ee226cf9" />
+</Solution>

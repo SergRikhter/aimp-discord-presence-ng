@@ -1,0 +1,45 @@
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+*.vs
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+
+# Visual Studio temporary files
+*.idb
+*.pdb
+*.ipch
+*.iobj
+*.sdf
+*.cachefile
+*.aps
+*.log
+*.tmp
+*.tlog/
+*.lastbuildstate
+
+# DLLs, EXEs
+*.exe
+*.dll
+*.lib
+*.o
+*.obj
+
+# NuGet packages
+*.nupkg
+packages/
+
+# OS files
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
