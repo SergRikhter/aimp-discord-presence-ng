@@ -1,43 +1,14 @@
 #pragma once
 #include "apiPlugin.h"
+#include "ComObject.h"
 
-class DiscordPresence : public IAIMPPlugin
+class DiscordPresence :
+     public ComObject,
+     public IAIMPPlugin
 {
     private:
         ULONG FRefCount = 1;
-
     public:
-        /**
-         * IUnknown implementation.
-         *
-         * Increments the reference counter of the object.
-         *
-         * @return Current reference count after increment.
-         */
-        ULONG WINAPI AddRef();
-
-        /**
-         * IUnknown implementation.
-         *
-         * Decrements the reference counter of the object.
-         * When the counter reaches zero, the object is destroyed.
-         *
-         * @return Current reference count after decrement.
-         */
-        ULONG WINAPI Release();
-
-        /**
-         * IUnknown implementation.
-         *
-         * Retrieves a pointer to the requested interface if supported.
-         *
-         * @param riid        Identifier of the requested interface.
-         * @param ppvObject   Receives a pointer to the interface.
-         *
-         * @return S_OK if the interface is supported, otherwise E_NOINTERFACE.
-         */
-        HRESULT WINAPI QueryInterface(REFIID riid, void** ppvObject);
-
         /**
          * IAIMPPlugin implementation.
          *
@@ -102,4 +73,4 @@ class DiscordPresence : public IAIMPPlugin
          * @param Data       Optional notification data.
          */
         void WINAPI SystemNotification(int NotifyID, IUnknown* Data);
-};
+ };
