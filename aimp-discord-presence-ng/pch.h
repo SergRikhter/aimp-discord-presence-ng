@@ -9,8 +9,6 @@
 
 // Добавьте сюда заголовочные файлы для предварительной компиляции
 #include "framework.h"
-#include <Windows.h>
-#include "apiFileManager.h"
 
 
 #endif //PCH_H
