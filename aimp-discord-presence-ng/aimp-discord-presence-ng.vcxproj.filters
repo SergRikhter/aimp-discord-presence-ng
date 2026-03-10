@@ -13,82 +13,19 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы заголовков\includes">
+      <UniqueIdentifier>{146669ac-bbc1-4e85-958e-3354fc10b5ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\src">
+      <UniqueIdentifier>{8e519bd9-3dd8-441a-aad6-35a1e651d87b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\includes</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiActions.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiAlbumArt.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiCore.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiDecoders.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiFileManager.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiGUI.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiInternet.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiLyrics.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiMenu.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiMessages.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiMUI.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiMusicLibrary.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiObjects.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiOptions.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiPlayer.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiPlaylists.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiPlugin.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiRemote.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiSkins.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiTagEditor.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiThreading.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiTypes.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiVisuals.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="framework.h">
+      <Filter>Файлы заголовков\includes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

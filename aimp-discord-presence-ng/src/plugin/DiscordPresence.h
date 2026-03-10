@@ -3,7 +3,7 @@
 
 class DiscordPresence
 {
-    class MyPlugin : public IAIMPPlugin
+    class Plugin : public IAIMPPlugin
     {
     private:
         ULONG FRefCount = 1;

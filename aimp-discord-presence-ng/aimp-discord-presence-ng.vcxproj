@@ -113,7 +113,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)includes\sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -140,29 +140,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiActions.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiAlbumArt.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiCore.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiDecoders.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiFileManager.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiGUI.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiInternet.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiLyrics.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiMenu.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiMessages.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiMUI.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiMusicLibrary.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiObjects.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiOptions.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiPlayer.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiPlaylists.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiPlugin.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiRemote.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiSkins.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiTagEditor.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiThreading.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiTypes.h" />
-    <ClInclude Include="C:\Users\serge\OneDrive\Desktop\AimpSDK\Sources\Cpp\apiVisuals.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
