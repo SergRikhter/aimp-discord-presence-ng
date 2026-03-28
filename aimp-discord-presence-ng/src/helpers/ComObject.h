@@ -3,14 +3,19 @@
 #include <Unknwn.h>
 
 using namespace std; 
+template <typename T>
 
-class ComObject : public IUnknown
+class ComObject : public T
 {
-  protected:
-    std::atomic<ULONG> RefCount{ 1 };
+  private:
+    ULONG RefCount;
 
   public:
-    virtual ~ComObject() = default;
+   ComObject() : RefCount(0) {}
+  
+   virtual BOOL isOurRIID(REFIID iid);
+
+   virtual ~ComObject() = default;
     
     /**
      * IUnknown implementation.
@@ -42,5 +47,5 @@ class ComObject : public IUnknown
      *
      * @return S_OK if the interface is supported, otherwise E_NOINTERFACE.
      */
-  virtual HRESULT WINAPI QueryInterface(REFIID riid, void** ppvObject) override;
+   virtual HRESULT WINAPI QueryInterface(REFIID iid, void** ppvObject) override;
 };
