@@ -213,7 +213,7 @@ class IAIMPImageContainer: public IUnknown
 	public:
 		virtual HRESULT WINAPI CreateImage(IAIMPImage **Image) = 0;
 		virtual HRESULT WINAPI GetInfo(SIZE *Size, int *FormatID) = 0;
-		virtual byte* WINAPI GetData() = 0;
+		virtual unsigned char* WINAPI GetData() = 0;
 		virtual LongWord WINAPI GetDataSize() = 0;
 		virtual HRESULT WINAPI SetDataSize(LongWord Value) = 0;
 };

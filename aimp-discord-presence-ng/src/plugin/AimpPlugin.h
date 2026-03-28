@@ -1,10 +1,13 @@
 #include "apiPlugin.h"
+#include "apiPlayer.h"
 #include "ComObject.h"
 
-class DiscordPresence : public IAIMPPlugin , public ComObject
+class AimpPlugin : public ComObject<IAIMPPlugin>
 {
+    protected: 
+    IAIMPServicePlayer* player = nullptr;
     public:
-		DiscordPresence() = default;
+        AimpPlugin() = default;
         /**
          * IAIMPPlugin implementation.
          *
