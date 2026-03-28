@@ -1,21 +1,21 @@
 #pragma once
+#include "pch.h"
 #include <atomic>
+#include <unordered_map>
 #include <Unknwn.h>
+#include "GUIDHash.h"
 
 using namespace std; 
-template <typename T>
 
-class IUnknownInterfaceImpl : public T
+template <typename Interfaces>
+class IUnknownInterfaceImpl : public Interfaces
 {
-  private:
-    ULONG RefCount;
-
+  protected:
+    atomic<ULONG> RefCount{ 0 };
+    unordered_map<GUID, void*, GUIDHash> interfaceMap;
   public:
-   IUnknownInterfaceImpl() : RefCount(0) {}
-  
-   virtual BOOL isOurRIID(REFIID iid);
-
-   virtual ~IUnknownInterfaceImpl() = default;
+    IUnknownInterfaceImpl() : RefCount(1) {}
+    virtual ~IUnknownInterfaceImpl() = default;
     
     /**
      * IUnknown implementation.
@@ -24,7 +24,7 @@ class IUnknownInterfaceImpl : public T
      *
      * @return Current reference count after increment.
      */
-   virtual ULONG WINAPI AddRef() override;
+    virtual ULONG WINAPI AddRef() override;
 
     /**
      * IUnknown implementation.
@@ -34,9 +34,8 @@ class IUnknownInterfaceImpl : public T
      *
      * @return Current reference count after decrement.
      */
-   virtual ULONG WINAPI Release() override;
+    virtual ULONG WINAPI Release() override;
 
-    
     /**
      * IUnknown implementation.
      *
@@ -47,5 +46,37 @@ class IUnknownInterfaceImpl : public T
      *
      * @return S_OK if the interface is supported, otherwise E_NOINTERFACE.
      */
-   virtual HRESULT WINAPI QueryInterface(REFIID iid, void** ppvObject) override;
+    virtual HRESULT WINAPI QueryInterface(REFIID iid, void** ppvObject) override;
 };
+
+template<typename Interfaces>
+ULONG WINAPI IUnknownInterfaceImpl<Interfaces>::AddRef()
+{
+    return ++RefCount;
+}
+
+template<typename Interfaces>
+ULONG WINAPI IUnknownInterfaceImpl<Interfaces>::Release()
+{
+    ULONG count = --RefCount;
+    if (count == 0)
+        delete this;
+    return count;
+}
+
+template<typename Interfaces>
+HRESULT WINAPI IUnknownInterfaceImpl<Interfaces>::QueryInterface(REFIID iid, void** ppvObject)
+{
+    if (!ppvObject)
+        return E_POINTER;
+
+    auto it = interfaceMap.find(iid);
+    if (it != interfaceMap.end())
+    {
+        *ppvObject = it->second;
+        AddRef();
+        return S_OK;
+    }
+
+    return E_NOINTERFACE;
+}

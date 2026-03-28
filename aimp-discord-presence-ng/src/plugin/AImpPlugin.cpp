@@ -35,11 +35,13 @@ HRESULT WINAPI AimpPlugin::Finalize() {
 
 void WINAPI AimpPlugin::SystemNotification(int NotifyID, IUnknown* Data){
     if (NotifyID == AIMP_SYSTEM_NOTIFICATION_SERVICE_ADDED) {
+       
+        /*
         if (Data) {
             this->player = nullptr;
             if (SUCCEEDED(Data->QueryInterface(IID_IAIMPServicePlayer, (void**)&this->player))) {
                 player->Release();
             }
-        }
+        }*/
 	}
 }
