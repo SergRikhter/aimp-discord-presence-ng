@@ -1,21 +1,21 @@
 #pragma once
-#include "pch.h"
 #include <atomic>
-#include <unordered_map>
 #include <Unknwn.h>
-#include "GUIDHash.h"
 
 using namespace std; 
+template <typename T>
 
-template <typename Interfaces>
-class IUnknownInterfaceImpl : public Interfaces
+class IUnknownInterfaceImpl : public T
 {
-  protected:
-    atomic<ULONG> RefCount{ 0 };
-    unordered_map<GUID, void*, GUIDHash> interfaceMap;
+  private:
+    ULONG RefCount;
+
   public:
-    IUnknownInterfaceImpl() : RefCount(1) {}
-    virtual ~IUnknownInterfaceImpl() = default;
+   IUnknownInterfaceImpl() : RefCount(0) {}
+  
+   virtual BOOL isOurRIID(REFIID iid);
+
+   virtual ~IUnknownInterfaceImpl() = default;
     
     /**
      * IUnknown implementation.
@@ -24,7 +24,7 @@ class IUnknownInterfaceImpl : public Interfaces
      *
      * @return Current reference count after increment.
      */
-    virtual ULONG WINAPI AddRef() override;
+   virtual ULONG WINAPI AddRef() override;
 
     /**
      * IUnknown implementation.
@@ -34,8 +34,9 @@ class IUnknownInterfaceImpl : public Interfaces
      *
      * @return Current reference count after decrement.
      */
-    virtual ULONG WINAPI Release() override;
+   virtual ULONG WINAPI Release() override;
 
+    
     /**
      * IUnknown implementation.
      *
@@ -46,37 +47,45 @@ class IUnknownInterfaceImpl : public Interfaces
      *
      * @return S_OK if the interface is supported, otherwise E_NOINTERFACE.
      */
-    virtual HRESULT WINAPI QueryInterface(REFIID iid, void** ppvObject) override;
+   virtual HRESULT WINAPI QueryInterface(REFIID iid, void** ppvObject) override;
 };
 
-template<typename Interfaces>
-ULONG WINAPI IUnknownInterfaceImpl<Interfaces>::AddRef()
+// Template method implementations must be visible at the point of instantiation.
+template<class T>
+BOOL IUnknownInterfaceImpl<T>::isOurRIID(REFIID iid)
 {
-    return ++RefCount;
+    return false;
 }
 
-template<typename Interfaces>
-ULONG WINAPI IUnknownInterfaceImpl<Interfaces>::Release()
+template <class T>
+ULONG WINAPI IUnknownInterfaceImpl<T>::AddRef()
 {
-    ULONG count = --RefCount;
-    if (count == 0)
+    return ++this->RefCount;
+}
+
+template <class T>
+ULONG WINAPI IUnknownInterfaceImpl<T>::Release()
+{
+    ULONG count = --this->RefCount;
+    if (count == 0) {
         delete this;
+    }
     return count;
 }
 
-template<typename Interfaces>
-HRESULT WINAPI IUnknownInterfaceImpl<Interfaces>::QueryInterface(REFIID iid, void** ppvObject)
+template <class T>
+HRESULT WINAPI IUnknownInterfaceImpl<T>::QueryInterface(REFIID iid, void** ppvObject)
 {
     if (!ppvObject)
         return E_POINTER;
 
-    auto it = interfaceMap.find(iid);
-    if (it != interfaceMap.end())
+    if (IID_IUnknown == iid || isOurRIID(iid))
     {
-        *ppvObject = it->second;
+        *ppvObject = this;
         AddRef();
         return S_OK;
     }
 
+    *ppvObject = nullptr;
     return E_NOINTERFACE;
 }
