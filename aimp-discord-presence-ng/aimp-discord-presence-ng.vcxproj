@@ -97,7 +97,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)src\helpers;$(ProjectDir)includes\aimp-sdk;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\headers;$(ProjectDir)src\helpers;$(ProjectDir)includes\aimp-sdk;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\headers\AppInfo.h" />
     <ClInclude Include="src\helpers\ComObject.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
