@@ -1,21 +1,21 @@
 #include "pch.h"
-#include "ComObject.h"
+#include "IUnknownInterfaceImpl.h"
 #include "apiPlugin.h"
 
 template<typename T>
-BOOL ComObject<T>::isOurRIID(REFIID iid)
+BOOL IUnknownInterfaceImpl<T>::isOurRIID(REFIID iid)
 {
     return false;
 }
 
 template <class T>
-ULONG WINAPI ComObject<T>::AddRef()
+ULONG WINAPI IUnknownInterfaceImpl<T>::AddRef()
 {
 	return ++this->RefCount;
 }
 
 template <class T>
-ULONG WINAPI ComObject<T>::Release()
+ULONG WINAPI IUnknownInterfaceImpl<T>::Release()
 {
 	ULONG count = --this->RefCount;
 	if (count == 0) {
@@ -25,7 +25,7 @@ ULONG WINAPI ComObject<T>::Release()
 }
 
 template <class T>
-HRESULT WINAPI ComObject<T>::QueryInterface(REFIID iid, void** ppvObject)
+HRESULT WINAPI IUnknownInterfaceImpl<T>::QueryInterface(REFIID iid, void** ppvObject)
 {
     if (!ppvObject)
         return E_POINTER;
@@ -40,4 +40,4 @@ HRESULT WINAPI ComObject<T>::QueryInterface(REFIID iid, void** ppvObject)
     return E_NOINTERFACE;
 }
 
-template class ComObject<IAIMPPlugin>;
+template class IUnknownInterfaceImpl<IAIMPPlugin>;

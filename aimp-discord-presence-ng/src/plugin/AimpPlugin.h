@@ -1,8 +1,8 @@
 #include "apiPlugin.h"
 #include "apiPlayer.h"
-#include "ComObject.h"
+#include "IUnknownInterfaceImpl.h"
 
-class AimpPlugin : public ComObject<IAIMPPlugin>
+class AimpPlugin : public IUnknownInterfaceImpl<IAIMPPlugin>
 {
     protected: 
     IAIMPServicePlayer* player = nullptr;
