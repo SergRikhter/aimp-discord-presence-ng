@@ -12,7 +12,7 @@ TChar* WINAPI AimpPlugin::InfoGet(int Index) {
         return const_cast<PWCHAR>(AppInfo::Author);
       case AIMP_PLUGIN_INFO_SHORT_DESCRIPTION:
         return const_cast<PWCHAR>(AppInfo::Description);
-     break;
+      break;
     }
     return 0;
 }
@@ -33,7 +33,13 @@ HRESULT WINAPI AimpPlugin::Finalize() {
     return S_OK;
 }
 
-
-void WINAPI AimpPlugin::SystemNotification(int NotifyID, IUnknown* Data) {
-
+void WINAPI AimpPlugin::SystemNotification(int NotifyID, IUnknown* Data){
+    if (NotifyID == AIMP_SYSTEM_NOTIFICATION_SERVICE_ADDED) {
+        if (Data) {
+            this->player = nullptr;
+            if (SUCCEEDED(Data->QueryInterface(IID_IAIMPServicePlayer, (void**)&this->player))) {
+                player->Release();
+            }
+        }
+	}
 }
