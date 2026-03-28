@@ -27,7 +27,7 @@
     <ClInclude Include="framework.h">
       <Filter>Файлы заголовков\includes</Filter>
     </ClInclude>
-    <ClInclude Include="src\helpers\ComObject.h">
+    <ClInclude Include="src\helpers\IUnknownInterfaceImpl.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\plugin\AimpPlugin.h">
@@ -44,7 +44,7 @@
     <ClCompile Include="pch.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\helpers\ComObject.cpp">
+    <ClCompile Include="src\helpers\IUnknownInterfaceImpl.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\plugin\AImpPlugin.cpp">

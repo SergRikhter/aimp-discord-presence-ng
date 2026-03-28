@@ -5,17 +5,17 @@
 using namespace std; 
 template <typename T>
 
-class ComObject : public T
+class IUnknownInterfaceImpl : public T
 {
   private:
     ULONG RefCount;
 
   public:
-   ComObject() : RefCount(0) {}
+   IUnknownInterfaceImpl() : RefCount(0) {}
   
    virtual BOOL isOurRIID(REFIID iid);
 
-   virtual ~ComObject() = default;
+   virtual ~IUnknownInterfaceImpl() = default;
     
     /**
      * IUnknown implementation.
